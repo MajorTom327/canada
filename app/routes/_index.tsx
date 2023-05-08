@@ -11,7 +11,8 @@ const bgImg = getImageUrl("/castor.jpg");
 
 export default function Index() {
   const classes = classNames(
-    "flex flex-col justify-end h-screen bg-fixed bg-center bg-no-repeat bg-cover p-32"
+    "flex flex-col justify-end h-screen bg-fixed bg-center bg-no-repeat bg-cover",
+    "p-2 sm:p-6 md:p-16 lg:p-32"
   );
   return (
     <div className={classes} style={{ backgroundImage: `url('${bgImg}')` }}>
@@ -19,7 +20,9 @@ export default function Index() {
         <Card className=" border-primary-focus bg-primary">
           <Card.Body className="items-center text-center">
             <Card.Title>
-              <h1 className="text-4xl font-bold">Canada Countdown</h1>
+              <h1 className="text-4xl font-bold text-primary-content">
+                Canada Countdown
+              </h1>
             </Card.Title>
             <CanadaCountdown />
           </Card.Body>
