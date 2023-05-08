@@ -3,7 +3,11 @@ import { useEffect, useState } from "react";
 import { flightDate } from "../lib/constants";
 
 export const getTimeBeforeFlight = () => {
-  return flightDate.diff(DateTime.local()).rescale();
+  return flightDate
+    .diff(DateTime.local())
+    .rescale()
+    .shiftTo("months", "days", "hours", "minutes", "seconds")
+    .set({ millisecond: 0 });
 };
 
 export const useTimeRemainingBeforeFlight = () => {
