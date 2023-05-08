@@ -6,8 +6,8 @@ export const getTimeBeforeFlight = () => {
   return flightDate
     .diff(DateTime.local())
     .rescale()
-    .shiftTo("months", "days", "hours", "minutes", "seconds")
-    .set({ millisecond: 0 });
+    .set({ millisecond: 0 })
+    .shiftTo("months", "days", "hours", "minutes", "seconds");
 };
 
 export const useTimeRemainingBeforeFlight = () => {
