@@ -17,7 +17,7 @@ export const meta: V2_MetaFunction = () => {
     { property: "og:site_name", content: "Canada Countdown" },
     {
       property: "og:description",
-      content: `Nous serons au canada dans ${timebeforeFlight.toHuman()}.`,
+      content: `Nous partirons au canada dans ${timebeforeFlight.toHuman()}.`,
     },
   ];
 };
