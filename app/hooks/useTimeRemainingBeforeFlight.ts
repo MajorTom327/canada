@@ -1,18 +1,17 @@
 import { DateTime } from "luxon";
 import { useEffect, useState } from "react";
+import { flightDate } from "../lib/constants";
 
-const flightDate = DateTime.fromFormat("2023-10-25 09:30", "yyyy-MM-dd HH:mm");
-
-const getDiff = () => {
+export const getTimeBeforeFlight = () => {
   return flightDate.diff(DateTime.local()).rescale();
 };
 
 export const useTimeRemainingBeforeFlight = () => {
-  const [remaining, setRemaining] = useState(getDiff());
+  const [remaining, setRemaining] = useState(getTimeBeforeFlight());
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setRemaining(getDiff());
+      setRemaining(getTimeBeforeFlight());
     }, 1000);
 
     return () => clearInterval(interval);

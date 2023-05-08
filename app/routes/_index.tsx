@@ -2,10 +2,24 @@ import type { V2_MetaFunction } from "@remix-run/node";
 import classNames from "classnames";
 import { Card } from "react-daisyui";
 import CanadaCountdown from "~/components/CanadaCountdown";
+import { getTimeBeforeFlight } from "~/hooks/useTimeRemainingBeforeFlight";
+
 import getImageUrl from "~/lib/getImageUrl";
 
 export const meta: V2_MetaFunction = () => {
-  return [{ title: "Canada Countdown" }];
+  const timebeforeFlight = getTimeBeforeFlight();
+  return [
+    { title: "Canada Countdown" },
+    { property: "og:type", content: "website" },
+    { property: "og:title", content: "Canada Countdown" },
+    { property: "og:image", content: getImageUrl("/castor.jpg") },
+    { property: "og:url", content: "https://canada.valentin-thomas.com" },
+    { property: "og:site_name", content: "Canada Countdown" },
+    {
+      property: "og:description",
+      content: `Nous serons au canada dans ${timebeforeFlight.toHuman()}.`,
+    },
+  ];
 };
 const bgImg = getImageUrl("/castor.jpg");
 
