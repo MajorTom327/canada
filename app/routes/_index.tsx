@@ -12,9 +12,8 @@ export const meta: V2_MetaFunction = () => {
     { title: "Canada Countdown" },
     { property: "og:type", content: "website" },
     { property: "og:title", content: "Canada Countdown" },
-    { property: "og:image", content: getImageUrl("/castor.jpg") },
     {
-      property: "twitter:image",
+      property: "og:image",
       content: getImageUrl("/castor.jpg", { width: 750 }),
     },
     { property: "twitter:card", content: "summary_large_image" },
