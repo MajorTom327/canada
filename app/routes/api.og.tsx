@@ -3,7 +3,7 @@ import { getTimeBeforeFlight } from "~/hooks/useTimeRemainingBeforeFlight";
 import { createCanvas, loadImage } from "canvas";
 import { image } from "remix-utils";
 
-export const config = { runtime: "edge" };
+// export const config = { runtime: "edge" };
 
 const backgroundImg = "https://canada.valentin-thomas.com/castor.jpg";
 const width = 1200;
