@@ -14,9 +14,10 @@ export const meta: V2_MetaFunction = () => {
     { property: "og:title", content: "Canada Countdown" },
     {
       property: "og:image",
-      content: getImageUrl("/castor.jpg", { width: 750 }),
+      content:
+        "https://canada.valentin-thomas.com/" +
+        getImageUrl("/castor.jpg", { width: 750 }),
     },
-    { property: "twitter:card", content: "summary_large_image" },
     { property: "og:url", content: "https://canada.valentin-thomas.com" },
     { property: "og:site_name", content: "Canada Countdown" },
     {
@@ -27,6 +28,20 @@ export const meta: V2_MetaFunction = () => {
       property: "description",
       content: `Nous partirons au canada dans ${timebeforeFlight.toHuman()}.`,
     },
+
+    { property: "twitter:card", content: "summary_large_image" },
+    { property: "twitter:title", content: "Canada Countdown" },
+    {
+      property: "twitter:image",
+      content:
+        "https://canada.valentin-thomas.com/" +
+        getImageUrl("/castor.jpg", { width: 750 }),
+    },
+    {
+      property: "twitter:description",
+      content: `Nous partirons au canada dans ${timebeforeFlight.toHuman()}.`,
+    },
+    { property: "twitter:url", content: "https://canada.valentin-thomas.com" },
   ];
 };
 const bgImg = getImageUrl("/castor.jpg");
