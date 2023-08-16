@@ -8,15 +8,18 @@ import getImageUrl from "~/lib/getImageUrl";
 
 export const meta: V2_MetaFunction = () => {
   const timebeforeFlight = getTimeBeforeFlight();
+
+  // const imageUrl =
+  //   "https://canada.valentin-thomas.com/" +
+  //   getImageUrl("/castor.jpg", { width: 750 });
+  const imageUrl = "https://canada.valentin-thomas.com/api/og";
   return [
     { title: "Canada Countdown" },
     { property: "og:type", content: "website" },
     { property: "og:title", content: "Canada Countdown" },
     {
       property: "og:image",
-      content:
-        "https://canada.valentin-thomas.com/" +
-        getImageUrl("/castor.jpg", { width: 750 }),
+      content: imageUrl,
     },
     { property: "og:url", content: "https://canada.valentin-thomas.com" },
     { property: "og:site_name", content: "Canada Countdown" },
@@ -33,9 +36,7 @@ export const meta: V2_MetaFunction = () => {
     { property: "twitter:title", content: "Canada Countdown" },
     {
       property: "twitter:image",
-      content:
-        "https://canada.valentin-thomas.com/" +
-        getImageUrl("/castor.jpg", { width: 750 }),
+      content: imageUrl,
     },
     {
       property: "twitter:description",
