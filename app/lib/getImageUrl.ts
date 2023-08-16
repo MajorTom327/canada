@@ -1,4 +1,4 @@
-import { propOr } from "ramda";
+import { pathEq, propOr } from "ramda";
 
 type ImageWidth = 640 | 750 | 828 | 1080 | 1200;
 
@@ -10,7 +10,8 @@ type Options = Partial<{
 export const getImageUrl = (src: string, options?: Options) => {
   const params = new URLSearchParams({});
 
-  if (process.env.NODE_ENV === "development") {
+  // @ts-expect-error - Ramda types are incorrect
+  if (pathEq("development", ["env", "NODE_ENV"], process)) {
     return src;
   }
 
