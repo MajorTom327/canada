@@ -9,10 +9,9 @@ import getImageUrl from "~/lib/getImageUrl";
 export const meta: V2_MetaFunction = () => {
   const timebeforeFlight = getTimeBeforeFlight();
 
-  // const imageUrl =
-  //   "https://canada.valentin-thomas.com/" +
-  //   getImageUrl("/castor.jpg", { width: 750 });
-  const imageUrl = "https://canada.valentin-thomas.com/api/og";
+  const imageUrl =
+    "https://canada.valentin-thomas.com/" +
+    getImageUrl("/castor.jpg", { width: 750 });
   return [
     { title: "Canada Countdown" },
     { property: "og:type", content: "website" },
