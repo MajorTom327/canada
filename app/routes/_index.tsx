@@ -13,10 +13,19 @@ export const meta: V2_MetaFunction = () => {
     { property: "og:type", content: "website" },
     { property: "og:title", content: "Canada Countdown" },
     { property: "og:image", content: getImageUrl("/castor.jpg") },
+    {
+      property: "twitter:image",
+      content: getImageUrl("/castor.jpg", { width: 750 }),
+    },
+    { property: "twitter:card", content: "summary_large_image" },
     { property: "og:url", content: "https://canada.valentin-thomas.com" },
     { property: "og:site_name", content: "Canada Countdown" },
     {
       property: "og:description",
+      content: `Nous partirons au canada dans ${timebeforeFlight.toHuman()}.`,
+    },
+    {
+      property: "description",
       content: `Nous partirons au canada dans ${timebeforeFlight.toHuman()}.`,
     },
   ];
