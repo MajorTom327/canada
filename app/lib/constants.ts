@@ -1,8 +1,5 @@
 import { DateTime } from "luxon";
 
-export const flightDate = DateTime.fromFormat(
-  "2023-10-25 09:30",
-  "yyyy-MM-dd HH:mm"
-)
-  .setLocale("fr-FR")
-  .setZone("Europe/Paris");
+export const flightDate = DateTime.fromFormat("2023-10-25 09:30", "yyyy-MM-dd HH:mm", {
+  zone: "Europe/Paris",
+}).setLocale("fr-FR");

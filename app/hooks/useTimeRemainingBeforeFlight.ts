@@ -4,6 +4,7 @@ import { flightDate } from "../lib/constants";
 
 export const getTimeBeforeFlight = () => {
   return flightDate
+    .setZone("Europe/Paris")
     .diff(DateTime.local().setLocale("fr-FR").setZone("Europe/Paris"))
     .rescale()
     .set({ millisecond: 0 })
